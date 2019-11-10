@@ -1,0 +1,7 @@
+{
+  "name": "MyBlankProject",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

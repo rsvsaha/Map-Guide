@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      MAP GUIDE
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="tomtomMapContainer"></div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="recenterMap()" color="secondary">
+      <ion-icon name="locate"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
