@@ -27,8 +27,8 @@ export class HomePage implements OnInit{
       console.log(error);
     });
     var options:GeolocationOptions = {
-      enableHighAccuracy: false,
-      timeout: 5000,
+      enableHighAccuracy: true,
+      timeout: 1000,
       maximumAge: 0
     };
 
