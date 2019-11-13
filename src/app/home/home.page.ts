@@ -15,7 +15,19 @@ export class HomePage implements OnInit{
   tomtomMapContainer:any;
   currentLocationMarker:any;
   currentLonLat=[0,0]
-
+  markerOptions = {
+    icon: tt.L.svgIcon({
+        icon: {
+            icon: 'fa fa-camera',
+            iconSize: [32, 37],
+            iconAnchor: [16, 2],
+            style: {
+                color: '#fff'
+            },
+            noPlainSVG: true
+        }
+    })
+};
   constructor(private geoLocation:Geolocation) {}
   
 
@@ -76,11 +88,18 @@ export class HomePage implements OnInit{
   }
 
   recenterMap(){
-    let cameraOptions={
-      center:this.currentLonLat,
-      zoom:15
-    }
-    this.tomtomMap.jumpTo(cameraOptions);
+    this.geoLocation.getCurrentPosition()
+    .then((position)=>{
+      this.currentLonLat=[position.coords.longitude,position.coords.latitude];
+      let cameraOptions={
+        center:this.currentLonLat,
+        zoom:15
+      }
+      this.tomtomMap.jumpTo(cameraOptions);
+    }).catch((error)=>{
+      console.log(error);
+    });
+    
   }
 
 

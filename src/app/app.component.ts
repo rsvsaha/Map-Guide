@@ -25,8 +25,8 @@ export class AppComponent {
   initializeApp() {
     this.platform.ready().then(() => {
       console.log("HERE");
-      //this.statusBar.styleDefault();
-      //this.splashScreen.hide();
+      this.statusBar.styleDefault();
+      this.splashScreen.hide();
       this.checkGPSPermission();    
     });
   }
@@ -76,8 +76,8 @@ export class AppComponent {
     this.locationAccuracy.request(this.locationAccuracy.REQUEST_PRIORITY_HIGH_ACCURACY).then(
       () => {
         // When GPS Turned ON go to Home Page
-        this.statusBar.styleDefault();
-      this.splashScreen.hide();
+      //  this.statusBar.styleDefault();
+     // this.splashScreen.hide();
 
       },
       error => alert('Error requesting location permissions ' + JSON.stringify(error))
