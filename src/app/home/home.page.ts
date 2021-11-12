@@ -68,7 +68,7 @@ export class HomePage implements OnInit{
     this.tomtomMapContainer=document.getElementById("tomtomMapContainer");
     //console.log(this.tomtomMapContainer);
     this.tomtomMap = tt.map({
-      key: 'zBAUYdIZ2oBB0iFrMlD1pu3ZZIIxGvB2',
+      key: 'security-key',
       container: this.tomtomMapContainer,
       style: 'tomtom://vector/1/basic-main',
       zoom:15,
